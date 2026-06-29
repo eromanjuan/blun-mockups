@@ -1,0 +1,13 @@
+- [ ] Review requirements and confirm tech stack (static HTML/CSS/JS)
+- [ ] Create initial responsive site structure (index.html)
+- [ ] Implement styling/theme system (styles.css) with hunter green + gold + white
+- [ ] Add interactivity (script.js):
+  - [ ] Light/Dark toggle with localStorage
+  - [ ] Mobile nav toggle
+  - [ ] Demo forms with client-side feedback
+  - [ ] Gallery placeholders
+  - [ ] Donation pill selection
+- [ ] Add images folder placeholders (logo.png, photo*.jpg)
+- [ ] Validate layout responsiveness
+- [ ] Provide run instructions
+
