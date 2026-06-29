@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" role="img" aria-labelledby="title desc">
+  <title id="title">BLUN campus illustration</title>
+  <desc id="desc">A refined school campus illustration using white, hunter green, and gold.</desc>
+  <rect width="720" height="560" fill="#fbfbf7"/>
+  <path d="M0 405h720v155H0z" fill="#eef3ea"/>
+  <path d="M80 390h560v120H80z" fill="#ffffff" stroke="#d5dfd7" stroke-width="3"/>
+  <path d="M116 290h488v100H116z" fill="#fffdf8" stroke="#d5dfd7" stroke-width="3"/>
+  <path d="M168 214h384v76H168z" fill="#ffffff" stroke="#d5dfd7" stroke-width="3"/>
+  <path d="M360 126 136 214h448L360 126z" fill="#0b3d2e"/>
+  <path d="M360 146 188 214h344L360 146z" fill="#14543f"/>
+  <path d="M360 118v-54" stroke="#c9a227" stroke-linecap="round" stroke-width="8"/>
+  <path d="M362 68h92l-15 21 15 21h-92z" fill="#c9a227"/>
+  <path d="M96 390h528" stroke="#c9a227" stroke-width="8"/>
+  <path d="M132 290h456" stroke="#c9a227" stroke-width="7"/>
+  <path d="M188 214h344" stroke="#c9a227" stroke-width="6"/>
+  <g fill="#0b3d2e">
+    <rect x="142" y="322" width="52" height="68" rx="3"/>
+    <rect x="226" y="322" width="52" height="68" rx="3"/>
+    <rect x="442" y="322" width="52" height="68" rx="3"/>
+    <rect x="526" y="322" width="52" height="68" rx="3"/>
+  </g>
+  <g fill="#f4df82">
+    <rect x="152" y="334" width="32" height="18" rx="2"/>
+    <rect x="236" y="334" width="32" height="18" rx="2"/>
+    <rect x="452" y="334" width="32" height="18" rx="2"/>
+    <rect x="536" y="334" width="32" height="18" rx="2"/>
+  </g>
+  <path d="M314 510V385c0-27 20-49 46-49s46 22 46 49v125z" fill="#0b3d2e"/>
+  <path d="M342 510V389c0-11 7-20 18-20s18 9 18 20v121z" fill="#f4df82" opacity=".9"/>
+  <circle cx="360" cy="250" r="34" fill="#0b3d2e" stroke="#c9a227" stroke-width="7"/>
+  <text x="360" y="258" fill="#fffaf0" font-family="Georgia, serif" font-size="24" font-weight="700" text-anchor="middle">B</text>
+  <path d="M70 508c122-30 214-30 336 0s180 27 244 0" fill="none" stroke="#c9a227" stroke-linecap="round" stroke-width="5"/>
+  <g fill="#14543f" opacity=".18">
+    <circle cx="82" cy="160" r="44"/>
+    <circle cx="625" cy="172" r="52"/>
+  </g>
+  <g fill="#0b3d2e">
+    <path d="M78 437c-20-44-2-88 35-113 39 30 48 79 13 116z"/>
+    <path d="M640 438c-28-39-18-89 16-121 45 24 61 73 34 116z"/>
+  </g>
+  <g stroke="#c9a227" stroke-linecap="round" stroke-width="4">
+    <path d="M113 438v50"/>
+    <path d="M657 438v50"/>
+  </g>
+</svg>

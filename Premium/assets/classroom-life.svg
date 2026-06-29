@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 340" role="img" aria-labelledby="title desc">
+  <title id="title">Classroom learning illustration</title>
+  <desc id="desc">Learners in a clean classroom with green and gold accents.</desc>
+  <rect width="440" height="340" fill="#f8faf4"/>
+  <rect x="35" y="42" width="370" height="214" rx="8" fill="#ffffff" stroke="#d5dfd7" stroke-width="3"/>
+  <rect x="68" y="74" width="132" height="78" rx="6" fill="#0b3d2e"/>
+  <path d="M88 100h92M88 124h60" stroke="#f4df82" stroke-linecap="round" stroke-width="6"/>
+  <rect x="230" y="74" width="118" height="20" rx="4" fill="#c9a227"/>
+  <rect x="230" y="112" width="140" height="12" rx="4" fill="#d5dfd7"/>
+  <rect x="230" y="139" width="112" height="12" rx="4" fill="#d5dfd7"/>
+  <g>
+    <circle cx="116" cy="218" r="23" fill="#c9a227"/>
+    <path d="M76 288c8-32 25-49 40-49s32 17 40 49z" fill="#14543f"/>
+    <circle cx="220" cy="218" r="23" fill="#f4df82"/>
+    <path d="M180 288c8-32 25-49 40-49s32 17 40 49z" fill="#0b3d2e"/>
+    <circle cx="324" cy="218" r="23" fill="#c9a227"/>
+    <path d="M284 288c8-32 25-49 40-49s32 17 40 49z" fill="#14543f"/>
+  </g>
+  <path d="M54 290h332" stroke="#c9a227" stroke-linecap="round" stroke-width="6"/>
+</svg>

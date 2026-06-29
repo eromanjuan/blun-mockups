@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 340" role="img" aria-labelledby="title desc">
+  <title id="title">Student support illustration</title>
+  <desc id="desc">A guidance and mentoring scene in hunter green and gold.</desc>
+  <rect width="440" height="340" fill="#fbfbf7"/>
+  <path d="M56 272h328" stroke="#c9a227" stroke-linecap="round" stroke-width="7"/>
+  <rect x="62" y="58" width="316" height="192" rx="8" fill="#ffffff" stroke="#d5dfd7" stroke-width="3"/>
+  <path d="M102 104h236M102 130h188" stroke="#d5dfd7" stroke-linecap="round" stroke-width="9"/>
+  <circle cx="160" cy="206" r="30" fill="#c9a227"/>
+  <path d="M108 286c11-39 32-60 52-60s41 21 52 60z" fill="#0b3d2e"/>
+  <circle cx="284" cy="206" r="30" fill="#f4df82"/>
+  <path d="M232 286c11-39 32-60 52-60s41 21 52 60z" fill="#14543f"/>
+  <path d="M203 196c18-20 38-20 56 0" fill="none" stroke="#c9a227" stroke-linecap="round" stroke-width="7"/>
+  <path d="M220 161 205 139c-10-15 7-33 22-22l6 5 6-5c15-11 32 7 22 22l-15 22z" fill="#0b3d2e"/>
+</svg>

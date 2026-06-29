@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLUN Educational Foundation Inc.</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ----- Reset & Base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ----- Buttons (hunter green & gold) ----- */
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-primary {
+      background: #2C4F3B;
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(44, 79, 59, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: #1f3a2b;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(44, 79, 59, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #2C4F3B;
+      border: 2px solid #2C4F3B;
+    }
+
+    .btn-outline:hover {
+      background: #2C4F3B;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .btn-light {
+      background: #ffffff;
+      color: #2C4F3B;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .btn-light:hover {
+      background: #f0f4f0;
+      transform: translateY(-3px);
+    }
+
+    .btn-gold {
+      background: #D4AF37;
+      color: #1e293b;
+      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-gold:hover {
+      background: #c09c2d;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(212, 175, 55, 0.4);
+    }
+
+    /* ----- Header / Navbar ----- */
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 12px 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #2C4F3B;
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo span {
+      color: #D4AF37;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #334155;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #D4AF37;
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2C4F3B;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: #2C4F3B;
+      color: #fff !important;
+      padding: 8px 22px;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .nav-cta:hover {
+      background: #1f3a2b;
+      color: #fff !important;
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: #2C4F3B;
+      background: none;
+      border: none;
+    }
+
+    /* ----- Hero ----- */
+    .hero {
+      padding: 80px 0 60px;
+      background: linear-gradient(145deg, #f0f5f0 0%, #ffffff 100%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #2C4F3B;
+    }
+
+    .hero-content h1 span {
+      color: #D4AF37;
+      position: relative;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #475569;
+      max-width: 500px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 32px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      object-fit: cover;
+      height: 300px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 28px;
+    }
+
+    .hero-stats div {
+      text-align: left;
+    }
+
+    .hero-stats .number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #2C4F3B;
+    }
+
+    .hero-stats .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #64748b;
+    }
+
+    /* ----- Section Titles ----- */
+    .section-title {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-title h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2C4F3B;
+    }
+
+    .section-title h2 span {
+      color: #D4AF37;
+    }
+
+    .section-title p {
+      color: #64748b;
+      max-width: 600px;
+      margin: 8px auto 0;
+    }
+
+    /* ----- About ----- */
+    .about {
+      padding: 80px 0 60px;
+      background: #ffffff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2C4F3B;
+      margin-bottom: 16px;
+    }
+
+    .about-text p {
+      color: #475569;
+      margin-bottom: 20px;
+    }
+
+    .about-text .highlight-list {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .about-text .highlight-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .about-text .highlight-list i {
+      color: #D4AF37;
+      font-size: 1.2rem;
+      width: 24px;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      object-fit: cover;
+      height: 280px;
+    }
+
+    /* ----- Programs ----- */
+    .programs {
+      padding: 80px 0 60px;
+      background: #f8faf8;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+
+    .program-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 36px 28px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      text-align: center;
+      border-top: 4px solid #D4AF37;
+    }
+
+    .program-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
+      border-color: #D4AF37;
+    }
+
+    .program-card i {
+      font-size: 2.8rem;
+      color: #D4AF37;
+      margin-bottom: 16px;
+    }
+
+    .program-card h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2C4F3B;
+      margin-bottom: 8px;
+    }
+
+    .program-card p {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    /* ----- Gallery (Campus Highlights) ----- */
+    .gallery {
+      padding: 80px 0 60px;
+      background: #ffffff;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      border: 3px solid transparent;
+      position: relative;
+      aspect-ratio: 1 / 1;
+      background: #f1f5f1;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      border-color: #D4AF37;
+      z-index: 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Gold overlay on hover for extra elegance */
+    .gallery-item::after {
+      content: '✦ Campus Highlight';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 16px 16px;
+      background: linear-gradient(0deg, rgba(44, 79, 59, 0.85) 0%, transparent 100%);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    /* ----- CTA / Enrollment (gold & green gradient) ----- */
+    .cta {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #2C4F3B 0%, #1f3a2b 100%);
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path d="M50 0 L100 50 L50 100 L0 50 Z" fill="%23D4AF37"/></svg>');
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .cta h2 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto 32px;
+      position: relative;
+    }
+
+    .cta .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      position: relative;
+    }
+
+    /* ----- Contact ----- */
+    .contact {
+      padding: 80px 0 60px;
+      background: #ffffff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2C4F3B;
+      margin-bottom: 16px;
+    }
+
+    .contact-info p {
+      color: #475569;
+      margin-bottom: 24px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .contact-detail i {
+      width: 44px;
+      height: 44px;
+      background: #f1f6f1;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2C4F3B;
+      font-size: 1.1rem;
+    }
+
+    .contact-detail span {
+      font-weight: 500;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #e2e8e0;
+      border-radius: 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: border 0.2s;
+      background: #f9faf9;
+      margin-bottom: 16px;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #2C4F3B;
+      background: #ffffff;
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ----- Footer ----- */
+    footer {
+      background: #0b1e15;
+      color: #cbd5e1;
+      padding: 40px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand h4 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand h4 span {
+      color: #D4AF37;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      max-width: 280px;
+    }
+
+    .footer-links h5 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #D4AF37;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      color: #cbd5e1;
+      transition: all 0.25s;
+      font-size: 1.1rem;
+    }
+
+    .footer-social a:hover {
+      background: #D4AF37;
+      color: #0b1e15;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    /* ----- Responsive ----- */
+    @media (max-width: 992px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        background: #ffffff;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        border-top: 1px solid #eef2ee;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero {
+        padding: 50px 0 40px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-stats {
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .cta h2 {
+        font-size: 2rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .about-image img {
+        height: auto;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
+      }
+      
+      .gallery-item::after {
+        font-size: 0.7rem;
+        padding: 12px 12px 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .programs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="BLUN Educational Foundation Logo" />
+        <span>BLUN</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#gallery">Campus</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#enroll" class="nav-cta">Enroll Now</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>Empowering Futures Through <span>Quality Education</span></h1>
+        <p>
+          BLUN Educational Foundation Inc. equips students with the skills, experience,
+          and confidence to thrive in the global tourism and service industry.
+        </p>
+        <div class="hero-buttons">
+          <a href="#enroll" class="btn btn-gold"><i class="fas fa-pencil-alt" style="margin-right:8px;"></i> Enroll Today</a>
+          <a href="#programs" class="btn btn-outline">Explore Programs</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="number">15+</div>
+            <div class="label">Years of Excellence</div>
+          </div>
+          <div>
+            <div class="number">98%</div>
+            <div class="label">Graduate Success</div>
+          </div>
+          <div>
+            <div class="number">500+</div>
+            <div class="label">Students Enrolled</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/4.jpg" alt="BLUN Campus or students" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About <span>BLUN</span></h2>
+        <p>Building healthy, productive communities through education and human services.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>Your Partner in Lifelong Learning</h3>
+          <p>
+            BLUN Educational Foundation Inc. is a non-profit organization dedicated to
+            providing educational and human services programming to youth, adults, and
+            organizations. We believe in the power of education to transform lives and
+            build stronger communities.
+          </p>
+          <p>
+            Located in Guimba, Nueva Ecija, we offer accessible, high-quality programs
+            that prepare students for meaningful careers in tourism, hospitality, and
+            beyond.
+          </p>
+          <ul class="highlight-list">
+            <li><i class="fas fa-check-circle"></i> 15+ years of service</li>
+            <li><i class="fas fa-check-circle"></i> Industry-aligned curriculum</li>
+            <li><i class="fas fa-check-circle"></i> Supportive learning environment</li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <img src="images/about-campus.jpg" alt="BLUN campus" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROGRAMS ===== -->
+  <section class="programs" id="programs">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our <span>Programs</span></h2>
+        <p>Designed to give you the competitive edge in the global marketplace.</p>
+      </div>
+      <div class="programs-grid">
+        <div class="program-card">
+          <i class="fas fa-plane-departure"></i>
+          <h4>Tourism Management</h4>
+          <p>Comprehensive training in travel, hospitality, and event management to launch your global career.</p>
+        </div>
+        <div class="program-card">
+          <i class="fas fa-hotel"></i>
+          <h4>Hospitality Services</h4>
+          <p>Hands-on experience in hotel operations, customer service, and food &amp; beverage management.</p>
+        </div>
+        <div class="program-card">
+          <i class="fas fa-chart-line"></i>
+          <h4>Entrepreneurship &amp; Life Skills</h4>
+          <p>Empowering youth and adults with financial literacy, self-employment skills, and 21st-century competencies.</p>
+        </div>
+        <div class="program-card">
+          <i class="fas fa-users"></i>
+          <h4>Community Development</h4>
+          <p>Programs that strengthen communities through literacy, livelihood, and human services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CAMPUS GALLERY ===== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-title">
+        <h2>Campus <span>Highlights</span></h2>
+        <p>Explore the vibrant campus life and modern facilities at BLUN.</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- JavaScript will dynamically load and shuffle images from images/1.jpg to images/24.jpg -->
+        <div style="grid-column:1/-1; text-align:center; padding:40px 0; color:#94a3b8;">
+          <i class="fas fa-spinner fa-spin" style="font-size:2rem; color:#D4AF37;"></i>
+          <p style="margin-top:12px;">Loading campus highlights...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA / ENROLL ===== -->
+  <section class="cta" id="enroll">
+    <div class="container">
+      <h2>Secure Your Future Today</h2>
+      <p>
+        Enrollment for the upcoming semester is now open. For only ₱500, your slot is guaranteed.
+        Don't miss this opportunity to unlock a world of possibilities.
+      </p>
+      <div class="btn-group">
+        <a href="https://forms.gle/V564iDTFUV61pmu1A" target="_blank" class="btn btn-light">
+          <i class="fas fa-arrow-right" style="margin-right:8px;"></i> Register Now
+        </a>
+        <a href="#contact" class="btn btn-outline" style="border-color:#fff; color:#fff;">
+          <i class="fas fa-envelope" style="margin-right:8px;"></i> Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Get in <span>Touch</span></h2>
+        <p>We'd love to hear from you. Reach out with any questions or inquiries.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Visit Our Campus</h3>
+          <p>
+            BLUN Educational Foundation Inc. is located in the heart of Guimba,
+            Nueva Ecija. We are open Monday through Saturday to serve you.
+          </p>
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Geronimo St., St. John District, Guimba, Nueva Ecija</span>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-clock"></i>
+            <span>Monday – Saturday: 8:00 AM – 5:00 PM</span>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <span>info@blunfoundation.edu.ph</span>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-phone-alt"></i>
+            <span>+63 (44) 123 4567</span>
+          </div>
+          <div style="margin-top:24px;">
+            <a href="https://www.facebook.com/BLUNEducationalFoundationInc" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:#1877f2; color:#fff; padding:10px 24px; border-radius:50px; font-weight:600; transition:0.2s;">
+              <i class="fab fa-facebook-f"></i> Follow us on Facebook
+            </a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm">
+            <input type="text" placeholder="Full Name" required />
+            <input type="email" placeholder="Email Address" required />
+            <input type="text" placeholder="Subject" />
+            <textarea placeholder="Your Message..." required></textarea>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane" style="margin-right:8px;"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>BLUN<span>.</span></h4>
+          <p>
+            BLUN Educational Foundation Inc. – empowering communities through
+            education, skills training, and human services since 2008.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/BLUNEducationalFoundationInc" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#gallery">Campus</a></li>
+            <li><a href="#enroll">Enrollment</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Programs</h5>
+          <ul>
+            <li><a href="#programs">Tourism Management</a></li>
+            <li><a href="#programs">Hospitality Services</a></li>
+            <li><a href="#programs">Entrepreneurship</a></li>
+            <li><a href="#programs">Community Development</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#contact">Contact Support</a></li>
+            <li><a href="#">Student Portal</a></li>
+            <li><a href="#">Scholarships</a></li>
+            <li><a href="#">Alumni</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 BLUN Educational Foundation Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // Mobile menu toggle
+    const toggleBtn = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const icon = toggleBtn.querySelector('i');
+      if (navLinks.classList.contains('active')) {
+        icon.className = 'fas fa-times';
+      } else {
+        icon.className = 'fas fa-bars';
+      }
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        toggleBtn.querySelector('i').className = 'fas fa-bars';
+      });
+    });
+
+    // Contact form submission (demo)
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for reaching out! We will get back to you soon. 😊');
+      form.reset();
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // ----- CAMPUS GALLERY RANDOMIZER -----
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function loadGallery() {
+      const galleryGrid = document.getElementById('galleryGrid');
+      if (!galleryGrid) return;
+
+      const totalImages = 24;
+      const imagePaths = [];
+      for (let i = 1; i <= totalImages; i++) {
+        imagePaths.push(`images/${i}.jpg`);
+      }
+
+      // Shuffle the array to randomize the order
+      const shuffledPaths = shuffleArray(imagePaths);
+
+      // Clear loading text
+      galleryGrid.innerHTML = '';
+
+      // Create and append image elements
+      shuffledPaths.forEach(path => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        
+        const img = document.createElement('img');
+        img.src = path;
+        img.alt = 'Campus Highlight';
+        img.loading = 'lazy';
+        
+        // Hide broken images so the layout stays clean
+        img.onerror = function() {
+          this.style.display = 'none';
+        };
+
+        item.appendChild(img);
+        galleryGrid.appendChild(item);
+      });
+    }
+
+    // Run the gallery function when the page loads
+    document.addEventListener('DOMContentLoaded', loadGallery);
+  </script>
+
+</body>
+</html>

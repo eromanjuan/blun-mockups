@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 340" role="img" aria-labelledby="title desc">
+  <title id="title">School community illustration</title>
+  <desc id="desc">A school community gathering with a banner and learners.</desc>
+  <rect width="440" height="340" fill="#f8faf4"/>
+  <path d="M0 246h440v94H0z" fill="#eef3ea"/>
+  <path d="M84 72h272v104H84z" fill="#ffffff" stroke="#d5dfd7" stroke-width="3"/>
+  <path d="M104 96h232v34H104z" fill="#0b3d2e"/>
+  <path d="M126 149h188" stroke="#c9a227" stroke-linecap="round" stroke-width="7"/>
+  <text x="220" y="121" fill="#fffaf0" font-family="Georgia, serif" font-size="18" font-weight="700" text-anchor="middle">BLUN</text>
+  <g>
+    <circle cx="92" cy="231" r="22" fill="#c9a227"/>
+    <path d="M54 304c8-32 23-51 38-51s30 19 38 51z" fill="#0b3d2e"/>
+    <circle cx="178" cy="231" r="22" fill="#f4df82"/>
+    <path d="M140 304c8-32 23-51 38-51s30 19 38 51z" fill="#14543f"/>
+    <circle cx="264" cy="231" r="22" fill="#c9a227"/>
+    <path d="M226 304c8-32 23-51 38-51s30 19 38 51z" fill="#0b3d2e"/>
+    <circle cx="348" cy="231" r="22" fill="#f4df82"/>
+    <path d="M310 304c8-32 23-51 38-51s30 19 38 51z" fill="#14543f"/>
+  </g>
+  <path d="M64 300h312" stroke="#c9a227" stroke-linecap="round" stroke-width="6"/>
+</svg>
