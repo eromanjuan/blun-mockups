@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUN Educational Foundation Inc.</title>
+    
+    <!-- Google Fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js for lightweight interactions -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- FontAwesome for professional UI Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Cinzel', 'serif']
+                    },
+                    colors: {
+                        brand: {
+                            green: '#1b4332',
+                            greenLight: '#2d6a4f',
+                            gold: '#d4af37',
+                            goldHover: '#baa02a',
+                            white: '#ffffff',
+                            slate: '#f4f6f4'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .font-heading { font-family: 'Cinzel', serif; }
+    </style>
+</head>
+<body class="bg-brand-slate text-slate-800 font-sans" x-data="{ mobileMenu: false }">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300 border-b border-brand-green/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Identity using local assets -->
+            <div class="flex items-center space-x-3">
+                <img src="images/logo.jpg" alt="BLUN Logo" class="w-14 h-14 object-contain onerror-fallback" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex'">
+                <div id="logo-placeholder" class="hidden w-12 h-12 bg-brand-green rounded-full flex items-center justify-center text-brand-gold font-bold text-xl shadow-md">
+                    B
+                </div>
+                <div>
+                    <span class="block font-heading font-bold text-lg tracking-tight text-brand-green">BLUN</span>
+                    <span class="block text-xs font-semibold text-slate-500 uppercase tracking-widest -mt-1">Educational Foundation</span>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="#about" class="text-slate-600 hover:text-brand-green transition-colors">About Us</a>
+                <a href="#programs" class="text-slate-600 hover:text-brand-green transition-colors">Programs</a>
+                <a href="#impact" class="text-slate-600 hover:text-brand-green transition-colors">Our Impact</a>
+                <a href="#contact" class="text-slate-600 hover:text-brand-green transition-colors">Contact</a>
+                <a href="https://www.facebook.com/BLUNEducationalFoundationInc" target="_blank" class="bg-brand-green text-white px-5 py-2.5 rounded shadow-md hover:bg-brand-greenLight transition-all flex items-center space-x-2 text-sm border-b-2 border-brand-gold">
+                    <i class="fab fa-facebook-f text-brand-gold"></i>
+                    <span>Connect Facebook</span>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button @click="mobileMenu = !mobileMenu" class="md:hidden text-brand-green focus:outline-none p-2 rounded-lg hover:bg-slate-100">
+                <i class="fa-solid" :class="mobileMenu ? 'fa-xmark text-xl' : 'fa-bars text-xl'"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div x-show="mobileMenu" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-4"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-4"
+             class="md:hidden bg-white border-t border-slate-100 shadow-xl px-4 py-6 space-y-4 absolute w-full left-0">
+            <a href="#about" @click="mobileMenu = false" class="block py-2 text-slate-700 font-medium hover:text-brand-green">About Us</a>
+            <a href="#programs" @click="mobileMenu = false" class="block py-2 text-slate-700 font-medium hover:text-brand-green">Programs</a>
+            <a href="#impact" @click="mobileMenu = false" class="block py-2 text-slate-700 font-medium hover:text-brand-green">Our Impact</a>
+            <a href="#contact" @click="mobileMenu = false" class="block py-2 text-slate-700 font-medium hover:text-brand-green">Contact</a>
+            <a href="https://www.facebook.com/BLUNEducationalFoundationInc" target="_blank" class="w-full text-center bg-brand-green text-white py-3 rounded font-medium block shadow-sm border-b-2 border-brand-gold">
+                <i class="fab fa-facebook mr-2 text-brand-gold"></i> Visit Official Facebook
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-32 bg-gradient-to-b from-brand-slate to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <span class="inline-block px-4 py-1.5 bg-brand-green/10 text-brand-green text-xs font-bold uppercase tracking-wider rounded">
+                    Empowering Minds, Shaping Futures
+                </span>
+                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+                    Building a Brighter Tomorrow Through <span class="text-brand-green">Education</span>
+                </h1>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+                    BLUN Educational Foundation Inc. is dedicated to providing accessible, high-quality learning paths, financial support, and holistic development to community youth.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#programs" class="w-full sm:w-auto px-8 py-4 bg-brand-green text-white font-bold rounded shadow-lg hover:bg-brand-greenLight transition-all text-center border-b-2 border-brand-gold">
+                        Explore Our Programs
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-white text-brand-green border border-slate-200 font-bold rounded hover:bg-slate-50 transition-all text-center">
+                        Get Involved
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative">
+                <!-- Main Feature Graphical Mockup Component -->
+                <div class="relative bg-gradient-to-br from-brand-green to-brand-greenLight rounded-2xl p-1 text-white shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <img src="file:///C:/Users/ROM/blun-mockups/images/hero-feature.jpg" alt="Foundation Students" class="w-full h-80 object-cover rounded-xl" onerror="this.style.display='none'; document.getElementById('hero-graphic-fallback').style.display='block'">
+                    
+                    <div id="hero-graphic-fallback" class="hidden p-8 space-y-8 bg-brand-green rounded-xl">
+                        <div class="flex justify-between items-start">
+                            <i class="fa-solid fa-graduation-cap text-5xl text-brand-gold"></i>
+                            <span class="text-xs font-mono text-brand-gold/80">EST. FOUNDATION</span>
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-2xl font-bold mb-2 text-white">Our Mission Path</h3>
+                            <p class="text-slate-200 text-sm leading-relaxed">
+                                To bridge socioeconomic gaps by providing educational toolsets, infrastructure support, and scholarship pathways to deserving students.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE IMPACT STATS SECTION -->
+    <section id="impact" class="py-16 bg-brand-green text-white border-t-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="p-6 space-y-2 border-r border-white/10 last:border-0">
+                    <div class="text-4xl lg:text-5xl font-black text-brand-gold"><i class="fa-solid fa-users-viewfinder mr-2 text-2xl"></i>500+</div>
+                    <div class="text-sm font-semibold uppercase tracking-wider text-slate-300">Scholars Supported</div>
+                </div>
+                <div class="p-6 space-y-2 border-r border-white/10 last:border-0">
+                    <div class="text-4xl lg:text-5xl font-black text-brand-gold"><i class="fa-solid fa-folder-open mr-2 text-2xl"></i>12+</div>
+                    <div class="text-sm font-semibold uppercase tracking-wider text-slate-300">Community Programs</div>
+                </div>
+                <div class="p-6 space-y-2 border-r border-white/10 last:border-0">
+                    <div class="text-4xl lg:text-5xl font-black text-brand-gold"><i class="fa-solid fa-chart-line mr-2 text-2xl"></i>100%</div>
+                    <div class="text-sm font-semibold uppercase tracking-wider text-slate-300">Transparency Rate</div>
+                </div>
+                <div class="p-6 space-y-2 last:border-0">
+                    <div class="text-4xl lg:text-5xl font-black text-brand-gold"><i class="fa-solid fa-handshake mr-2 text-2xl"></i>20+</div>
+                    <div class="text-sm font-semibold uppercase tracking-wider text-slate-300">Active Partners</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE PROGRAMS MODULE -->
+    <section id="programs" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-green">Our Core Pillars</h2>
+                <p class="text-slate-600">We develop continuous strategies designed to dismantle barriers to academic achievement.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-brand-slate rounded-xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-12 h-12 bg-brand-green/10 text-brand-green rounded flex items-center justify-center text-xl font-bold mb-6 group-hover:bg-brand-green group-hover:text-white transition-all">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Scholarship Subsidies</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Offering comprehensive tuition relief and stipends to promising individuals facing financial instability.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-brand-slate rounded-xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-12 h-12 bg-brand-green/10 text-brand-green rounded flex items-center justify-center text-xl font-bold mb-6 group-hover:bg-brand-green group-hover:text-white transition-all">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Learning Resources</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Supplying schools and students with textbooks, technological devices, and curated learning guides.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-brand-slate rounded-xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-12 h-12 bg-brand-green/10 text-brand-green rounded flex items-center justify-center text-xl font-bold mb-6 group-hover:bg-brand-green group-hover:text-white transition-all">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Community Mentorship</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Conducting technical skill bootcamps, workshops, and direct leadership development programs regularly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / INQUIRY SECTION -->
+    <section id="contact" class="py-20 bg-brand-green text-white border-t-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <h2 class="font-heading text-3xl font-extrabold text-brand-gold">Get in Touch With Us</h2>
+                <p class="text-slate-300">
+                    Have questions about admissions, partnership opportunities, or donating? Reach out through our direct community channel or monitor updates on Facebook.
+                </p>
+                <div class="space-y-4 font-medium text-slate-300">
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-solid fa-envelope text-brand-gold"></i>
+                        <span>contact@blunfoundation.org</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-solid fa-location-dot text-brand-gold"></i>
+                        <span>Central Luzon, Philippines</span>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="space-y-4 bg-white/5 p-8 rounded-xl border border-white/10" @submit.prevent="alert('Thank you for connecting with BLUN Foundation!')">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Your Name</label>
+                    <input type="text" required class="w-full bg-brand-greenLight/50 border border-brand-greenLight rounded px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Email Address</label>
+                    <input type="email" required class="w-full bg-brand-greenLight/50 border border-brand-greenLight rounded px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Message</label>
+                    <textarea rows="4" required class="w-full bg-brand-greenLight/50 border border-brand-greenLight rounded px-4 py-3 text-white focus:outline-none focus:border-brand-gold"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-gold hover:bg-brand-goldHover text-brand-green font-bold py-4 rounded shadow-md transition-all uppercase tracking-wider text-sm">
+                    Send Secure Inquiry
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-500 text-xs py-8 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                &copy; 2026 BLUN Educational Foundation Inc. All Rights Reserved.
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://www.facebook.com/BLUNEducationalFoundationInc" target="_blank" class="hover:text-brand-gold transition-colors text-base"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-slate-300 transition-colors">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

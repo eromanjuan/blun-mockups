@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BLUN Educational Foundation — Design Showcase</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital@1&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;display=swap" rel="stylesheet">
+<style>
+:root{--paper:#ffffff;--card:#ffffff;--ink:#0b1e15;--ink-2:#334155;--mute:#64748b;--line:rgba(11,30,21,.12);--line-2:rgba(11,30,21,.18);--terra:#D4AF37;--terra-deep:#b8921f;--hunter:#1B4332;--hunter-light:#2d6a4f;--serif:'Marcellus',serif;--ital:'EB Garamond',serif;--sans:'Hanken Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;--eo:cubic-bezier(.23,1,.32,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--terra);color:#fff}
+:focus-visible{outline:2px solid var(--terra-deep);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1480px;margin:0 auto;padding:0 clamp(20px,3vw,44px)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;text-wrap:balance}
+em{font-family:var(--ital);font-style:italic;color:var(--terra-deep)}
+.mlabel{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--hunter);box-shadow:0 8px 30px rgba(27,67,50,.08)}
+.bar .in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .mark{width:36px;height:36px;border-radius:8px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--serif);font-size:18px}
+.brand .t b{font-family:var(--serif);font-weight:400;font-size:17px;display:block;line-height:1.15}
+.brand .t span{font-family:var(--mono);font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.bar-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.seg{display:inline-flex;background:#ECE6D9;border:1px solid var(--line);border-radius:99px;padding:3px}
+.seg button{font-family:var(--mono);font-size:11px;letter-spacing:.08em;font-weight:500;padding:.55em 1.2em;border-radius:99px;color:var(--mute);border:0;background:none;cursor:pointer;transition:.25s var(--eo);text-transform:uppercase}
+.seg button.on{background:var(--ink);color:#fff}
+.bench{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line-2);border-radius:99px;padding:9px 16px;transition:.25s}
+.bench:hover{border-color:var(--ink);color:var(--ink)}
+
+/* hero */
+.hero{padding:clamp(44px,6vw,80px) 0 clamp(30px,4vw,52px);text-align:center}
+.hero h1{font-size:clamp(32px,4.6vw,62px);max-width:22ch;margin:14px auto 16px}
+.hero p{color:var(--ink-2);max-width:64ch;margin:0 auto;font-size:16.5px}
+.hero .mlabel{color:var(--terra-deep)}
+.hero .note{margin:22px auto 0;max-width:60ch;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:none;color:var(--mute);background:#EFE8D9;border:1px solid var(--line);border-radius:10px;padding:11px 16px;line-height:1.7}
+.hero .note b{color:var(--ink-2);font-weight:500}
+
+/* group divider */
+.group{grid-column:1/-1;display:flex;align-items:center;gap:18px;margin:clamp(22px,3vw,40px) 0 2px}
+.group:first-child{margin-top:0}
+.group .gl{font-family:var(--serif);font-size:clamp(20px,2vw,26px);white-space:nowrap}
+.group .gn{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-deep)}
+.group .rule{flex:1;height:1px;background:var(--line-2)}
+
+/* grid of design cards */
+.deck{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(22px,2.6vw,38px);padding-bottom:clamp(60px,8vw,100px)}
+@media(max-width:1020px){.deck{grid-template-columns:1fr}}
+.dcard{background:linear-gradient(180deg,#ffffff 0%, #ffffff 60%, rgba(212,175,55,.05) 100%);border:1px solid rgba(27,67,50,.16);box-shadow:0 18px 50px rgba(27,67,50,.08)}
+.dhead .letter{border-color:rgba(27,67,50,.24)}
+.chips span{background:rgba(212,175,55,.12);color:var(--hunter-light);border:1px solid rgba(212,175,55,.28)}
+.preview{background:linear-gradient(180deg, rgba(27,67,50,.03) 0%, #ffffff 100%)}
+.dcard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(28,24,18,.07);display:flex;flex-direction:column}
+.dhead{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:20px 24px 16px}
+.dhead .lt{display:flex;align-items:baseline;gap:14px}
+.dhead .letter{font-family:var(--serif);font-size:15px;color:var(--terra-deep);border:1px solid var(--line-2);border-radius:50%;width:34px;height:34px;display:grid;place-items:center;align-self:center}
+.dhead h2{font-size:clamp(22px,2vw,28px)}
+.dhead .tagline{font-family:var(--ital);font-style:italic;font-size:15px;color:var(--mute)}
+.open{display:inline-flex;align-items:center;gap:.5em;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:#fff;background:var(--ink);border-radius:99px;padding:10px 18px;transition:.25s var(--eo);flex:0 0 auto}
+.open:hover{background:var(--terra-deep);transform:translateY(-2px)}
+.open svg{width:.95em;height:.95em}
+
+/* live preview: scaled iframe */
+.preview{position:relative;background:#E8E2D4;border-block:1px solid var(--line);overflow:hidden;min-height:240px}
+.preview iframe{position:absolute;top:0;left:0;border:0;transform-origin:top left;background:#fff;pointer-events:auto}
+.preview .veil{position:absolute;inset:0;z-index:2;display:grid;place-items:center;background:rgba(28,24,18,0);transition:background .3s;cursor:pointer}
+.preview .veil span{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:rgba(28,24,18,.78);border-radius:99px;padding:9px 18px;opacity:0;transition:opacity .3s}
+.preview .veil:hover span{opacity:1}
+.preview.live .veil{display:none}
+.tag3d{position:absolute;top:12px;right:12px;z-index:3;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(28,24,18,.7);border-radius:99px;padding:6px 11px}
+
+.dbody{padding:18px 24px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
+.dbody p{font-size:14.5px;color:var(--ink-2);max-width:74ch}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
+.chips span{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--terra-deep);background:#F4E5D5;border-radius:99px;padding:6px 12px}
+
+footer{border-top:1px solid var(--line);padding:34px 0 40px;text-align:center}
+footer p{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);line-height:2.2}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap in">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">B</span>
+      <span class="t"><b>BLUN</b><span>Educational Foundation</span></span>
+    </div>
+    <div class="bar-right">
+      <div class="seg" role="group" aria-label="Preview device">
+        <button id="segDesk" class="on">Desktop</button>
+        <button id="segMob">Mobile</button>
+      </div>
+      <a class="bench" href="mailto:eugenioiromanjuan@gmail.com">eugenioiromanjuan@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="mlabel">Design showcase · 4 Mockups</span>
+    <h1>BLUN <em>design directions</em></h1>
+    <p>Open each tier to view the full page build. Hover a card preview to interact, or use “Open” to launch full screen.</p>
+    <p class="note">Tip: use a local server if a design relies on external assets. In this folder run: <b>python -m http.server</b>, then open <b>http://localhost:8000/showcase.html</b>.</p>
+  </div>
+</header>
+
+<main class="wrap deck" id="deck">
+
+  <div class="group"><span class="gl">Tiers</span><span class="rule"></span><span class="gn">Basic · Standard · Professional · Premium</span></div>
+
+  <article class="dcard" data-src="Basic/index.html">
+    <div class="dhead">
+      <div class="lt"><span class="letter">1</span><div><h2>Basic</h2><span class="tagline">Clean &amp; welcoming layout</span></div></div>
+      <a class="open" href="Basic/index.html" target="_blank" rel="noopener">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    </div>
+    <div class="preview"><div class="veil" role="button" tabindex="0" aria-label="Activate live preview"><span>Click to interact</span></div></div>
+    <div class="dbody">
+      <p>Optimized for fast loading with a consistent brand palette, campus gallery randomizer, and simple enrollment CTA.</p>
+      <div class="chips"><span>Green</span><span>Gold</span><span>Fast HTML</span></div>
+    </div>
+  </article>
+
+  <article class="dcard" data-src="Standard/index.html">
+    <div class="dhead">
+      <div class="lt"><span class="letter">2</span><div><h2>Standard</h2><span class="tagline">Modern, structured sections</span></div></div>
+      <a class="open" href="Standard/index.html" target="_blank" rel="noopener">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    </div>
+    <div class="preview"><div class="veil" role="button" tabindex="0" aria-label="Activate live preview"><span>Click to interact</span></div></div>
+    <div class="dbody">
+      <p>Premium-looking navigation, hero storytelling, and a clear contact/inquiry flow—built to be easy to brand.</p>
+      <div class="chips"><span>Responsive</span><span>Cards</span><span>Foundation</span></div>
+    </div>
+  </article>
+
+  <article class="dcard" data-src="Professional/index.html">
+    <div class="dhead">
+      <div class="lt"><span class="letter">3</span><div><h2>Professional</h2><span class="tagline">Bold fundraising &amp; impact</span></div></div>
+      <a class="open" href="Professional/index.html" target="_blank" rel="noopener">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    </div>
+    <div class="preview"><div class="veil" role="button" tabindex="0" aria-label="Activate live preview"><span>Click to interact</span></div></div>
+    <div class="dbody">
+      <p>Impact-forward layout with donation-focused sections, step-by-step program messaging, and clean typographic hierarchy.</p>
+      <div class="chips"><span>Impact</span><span>Donate</span><span>Clean UI</span></div>
+    </div>
+  </article>
+
+  <article class="dcard" data-src="Premium/index.html">
+    <div class="dhead">
+      <div class="lt"><span class="letter">4</span><div><h2>Premium</h2><span class="tagline">Enhanced branding &amp; interactions</span></div></div>
+      <a class="open" href="Premium/index.html" target="_blank" rel="noopener">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    </div>
+    <div class="preview"><div class="veil" role="button" tabindex="0" aria-label="Activate live preview"><span>Click to interact</span></div></div>
+    <div class="dbody">
+      <p>High-end visual style with richer components, polished admissions/inquiry sections, and a modern educational brand feel.</p>
+      <div class="chips"><span>Premium</span><span>Polished</span><span>UX</span></div>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>BLUN · Design directions showcase · 2026</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var DESK={w:1440,h:900},MOB={w:390,h:780};
+  var mode='desk';
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.dcard'));
+
+  function layout(){
+    cards.forEach(function(card){
+      var pv=card.querySelector('.preview');
+      var f=pv.querySelector('iframe');
+      var cw=pv.clientWidth;
+      var s,w,h;
+      if(mode==='desk'){
+        w=DESK.w;h=DESK.h;s=cw/w;
+        pv.style.height=(h*s)+'px';
+        if(f){f.style.width=w+'px';f.style.height=h+'px';f.style.transform='scale('+s+')';f.style.left='0px';}
+      }else{
+        w=MOB.w;h=MOB.h;
+        var ph=Math.min(560,cw*0.9);
+        s=ph/h;
+        pv.style.height=ph+'px';
+        if(f){f.style.width=w+'px';f.style.height=h+'px';f.style.transform='scale('+s+')';f.style.left=((cw-w*s)/2)+'px';}
+      }
+    });
+  }
+
+  function spawn(card){
+    var pv=card.querySelector('.preview');
+    if(pv.querySelector('iframe'))return;
+    var f=document.createElement('iframe');
+    var src=card.getAttribute('data-src');
+    f.src=src+(src.indexOf('?')<0?'?preview':'&preview');
+    f.title='Live preview';
+    f.loading='lazy';
+    pv.appendChild(f);
+    layout();
+  }
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){spawn(e.target);io.unobserve(e.target);}});
+    },{rootMargin:'300px 0px'});
+    cards.forEach(function(c){io.observe(c);});
+  }else{cards.forEach(spawn);}
+
+  cards.forEach(function(card){
+    var pv=card.querySelector('.preview'),veil=pv.querySelector('.veil');
+    function activate(){spawn(card);pv.classList.add('live');}
+    veil.addEventListener('click',activate);
+    veil.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();activate();}});
+    card.addEventListener('mouseleave',function(){pv.classList.remove('live');});
+  });
+
+  var bd=document.getElementById('segDesk'),bm=document.getElementById('segMob');
+  function setMode(m){
+    mode=m;
+    bd.classList.toggle('on',m==='desk');
+    bm.classList.toggle('on',m==='mob');
+    layout();
+  }
+  bd.addEventListener('click',function(){setMode('desk');});
+  bm.addEventListener('click',function(){setMode('mob');});
+
+  window.addEventListener('resize',layout);
+  layout();
+})();
+</script>
+</body>
+</html>
+
